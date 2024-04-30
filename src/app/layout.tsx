@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+"use client";
+
+import { RecoilRoot } from "recoil";
 import "./globals.css";
+import Header from "@/common/components/Header/Header";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Wicther Bestiary",
-  description: "Bestiary from the world of the Witcher",
-};
+const mainFont = localFont({
+  src: "../common/fonts/Thewitcher-jnOj.ttf",
+  variable: "--main-font",
+});
 
 export default function RootLayout({
   children,
@@ -16,7 +17,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <title>Wicther Bestiary</title>
+        <meta
+          name="description"
+          content="Bestiary from the world of the Witcher"
+        />
+      </head>
+      <body className={mainFont.className}>
+        <RecoilRoot>
+          <Header />
+          <main>{children}</main>
+        </RecoilRoot>
+      </body>
     </html>
   );
 }

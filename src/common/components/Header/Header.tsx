@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import SideMenu from "./SideMenu/SideMenu";
