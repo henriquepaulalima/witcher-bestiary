@@ -1,7 +1,27 @@
-.header__container {
+.header__container nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.5rem;
+  background: #151515;
 
   h1 {
-    
+    font-size: 2.25rem; 
+  }
+
+  button {
+    padding: .5rem;
+    background: #FFF;
+    border: none;
+    border-radius: .375rem;
+
+    &:hover, &:focus {
+      opacity: .75 ;  
+    }
+
+    &:active {
+      opacity: .5;
+    }
   }
 }
